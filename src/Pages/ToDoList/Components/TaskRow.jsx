@@ -1,5 +1,6 @@
 const TaskRow = (props) => {
-  const { tasks, index } = props;
+  const { tasks, index, toggleTask } = props;
+
   return (
     <tr>
       <th scope="row" className="text-center">
@@ -14,6 +15,7 @@ const TaskRow = (props) => {
             id={tasks.id}
             autoComplete="off"
             checked={tasks.completed}
+            onChange={() => toggleTask(tasks.id)}
           />
           <label
             className={`btn btn-sm ${

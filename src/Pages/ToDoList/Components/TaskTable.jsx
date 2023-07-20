@@ -1,7 +1,7 @@
 import TaskRow from "./TaskRow";
 
 const TasksTable = (props) => {
-  const { tasks } = props;
+  const { tasks, toggleTask } = props;
   return (
     <table className="table table-striped table-hover">
       <thead>
@@ -17,7 +17,12 @@ const TasksTable = (props) => {
       </thead>
       <tbody>
         {tasks.map((task, index) => (
-          <TaskRow key={tasks.id} tasks={task} index={index} />
+          <TaskRow
+            key={tasks.id}
+            tasks={task}
+            index={index}
+            toggleTask={toggleTask}
+          />
         ))}
       </tbody>
     </table>

@@ -1,5 +1,5 @@
 const AddRemoveTasks = (props) => {
-  const { taskRef, handleAddTask } = props;
+  const { taskRef, handleAddTask, removeCompleted } = props;
 
   return (
     <div className="col-6">
@@ -15,7 +15,7 @@ const AddRemoveTasks = (props) => {
           <button
             type="submit"
             className="btn btn-danger mb-3"
-            //onClick={handleClearAll}
+            onClick={removeCompleted}
           >
             Remove completed tasks
           </button>
