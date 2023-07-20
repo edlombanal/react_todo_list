@@ -1,9 +1,9 @@
 const TaskRow = (props) => {
-  const { tasks } = props;
+  const { tasks, index } = props;
   return (
     <tr>
       <th scope="row" className="text-center">
-        {tasks.id}
+        {index + 1}
       </th>
       <td>{tasks.task}</td>
       <td>

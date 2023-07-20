@@ -1,4 +1,6 @@
-const AddRemoveTasks = () => {
+const AddRemoveTasks = (props) => {
+  const { taskRef, handleAddTask } = props;
+
   return (
     <div className="col-6">
       <div className="form-floating">
@@ -6,7 +8,7 @@ const AddRemoveTasks = () => {
           className="form-control"
           placeholder="Leave a comment here"
           id="floatingTextarea"
-          //ref={taskRef}
+          ref={taskRef}
         />
         <label htmlFor="floatingTextarea">Add a new task:</label>
         <div className="d-flex justify-content-evenly mt-3">
@@ -20,7 +22,7 @@ const AddRemoveTasks = () => {
           <button
             type="submit"
             className="btn btn-info mb-3"
-            //onClick={handleAddTask}
+            onClick={handleAddTask}
           >
             Add task
           </button>
