@@ -1,29 +1,24 @@
-const TasksTable = () => {
+import TaskRow from "./TaskRow";
+
+const TasksTable = (props) => {
+  const { tasks } = props;
   return (
-    <table class="table table-striped table-hover">
+    <table className="table table-striped table-hover">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col" className="text-center">
+            #
+          </th>
           <th scope="col">Description</th>
-          <th scope="col">Status</th>
+          <th scope="col" className="text-center">
+            Status
+          </th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Develop KPI</td>
-          <td>Pending</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Develop time study</td>
-          <td>Completed</td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Hold call with client</td>
-          <td>Pending</td>
-        </tr>
+        {tasks.map((task, index) => (
+          <TaskRow key={tasks.id} tasks={task} />
+        ))}
       </tbody>
     </table>
   );
